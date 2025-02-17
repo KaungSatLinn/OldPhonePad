@@ -143,11 +143,12 @@ static void OperationSec(Dictionary<string, char> charMap)
     }
     Console.WriteLine("Result: " + result.ToUpper());
     Console.WriteLine();
-    Console.WriteLine("Press Any Key to Start or 'e' to Quit: ");
+    Console.WriteLine("Press Any Key to Restart or 'E' to Quit: ");
     Console.WriteLine();
     var key = Console.ReadKey();
     if (key.KeyChar != 'e' && key.KeyChar != 'E')
     {
+        Console.WriteLine();
         OperationSec(charMap);
     }
 }
