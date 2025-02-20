@@ -37,68 +37,9 @@ Dictionary<string, char> charMap = new()
     {"*",'*' }
 };
 
-OperationSec(charMap);
+OldPhonePad(charMap);
 
-static void Operation(Dictionary<string, char> charMap)
-{
-    Console.WriteLine("Write Value & Enter to see result!");
-    string input = Console.ReadLine();
-    string[] words = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-    string result = string.Empty;
-    foreach (string word in words)
-    {   
-        string currentChar = string.Empty;
-        string lastChar = string.Empty;
-        string tempStr = string.Empty;
-        for (int i = 0; i < word.Length; i++)
-        {
-            currentChar = word[i].ToString();
-            if (!charMap.ContainsKey(currentChar)) {
-                result = "Invalid Character!";
-                break;
-            }
-            if (i == 0)
-            {
-                tempStr = currentChar;
-                lastChar = currentChar;
-                continue;
-            }
-            if (currentChar == lastChar)
-            {
-                tempStr += currentChar;
-                lastChar = currentChar;
-                continue;// Without #, loop will stop here and the last char won't show.
-            }
-            if (tempStr != string.Empty)
-            {
-                result += charMap[tempStr].ToString();
-                tempStr = currentChar;
-            }
-            if (i == word.Length - 1 && currentChar != "#" && currentChar != "*") {
-                result += charMap[tempStr].ToString();
-            }
-            if (currentChar == "*")
-            {
-                result = result != string.Empty ? result.Remove(result.Length - 1) : string.Empty;
-                tempStr = string.Empty;
-                lastChar = string.Empty;
-                continue;
-            }
-            lastChar = currentChar;
-        }
-    }
-    Console.WriteLine("Result: " + result);
-    Console.WriteLine();
-    Console.WriteLine("Press Any Key to Start or E to Quit: ");
-    Console.WriteLine();
-    var key = Console.ReadKey();
-    if (key.KeyChar != 'e')
-    {
-        Operation(charMap);
-    }
-}
-
-static void OperationSec(Dictionary<string, char> charMap)
+static void OldPhonePad(Dictionary<string, char> charMap)
 {
     Console.WriteLine("Write Value & Enter to see result!");
     string input = Console.ReadLine();
@@ -149,6 +90,6 @@ static void OperationSec(Dictionary<string, char> charMap)
     if (key.KeyChar != 'e' && key.KeyChar != 'E')
     {
         Console.WriteLine();
-        OperationSec(charMap);
+        OldPhonePad(charMap);
     }
 }
