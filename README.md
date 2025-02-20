@@ -1,6 +1,8 @@
-# OldPhonePad
+# OldPhonePad Project Overview
 
-OldPhonePad is a console application that simulates the old mobile phone keypad input method for typing text messages. It converts sequences of key presses into corresponding characters.
+Since there is no requirement for creating UI or building a web app, I choose to write a simple console application.
+OldPhonePad is a console application that simulates the old mobile phone keypad input method for typing text messages. 
+It converts sequences of input which simulate the key presses of old phone pad into corresponding characters.
 
 ## Getting Started
 
@@ -35,3 +37,5 @@ Result: ABC
 
 Press Any Key to Restart or 'E' to Quit:
 ```
+### Test Cases
+[Test Case](https://docs.google.com/spreadsheets/d/1fhw9QZfciDizrjhJnPKAxq-g-ktxptOec3h3GgaYr3A/edit?usp=sharing)
